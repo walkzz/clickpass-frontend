@@ -1,0 +1,56 @@
+.assistant-section{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.assistant-container{
+    max-width: 56rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0.8rem;
+    color: hsl(220 9% 23%);
+}
+.assistant-details{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    text-align: center;
+}
+.assistant-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    letter-spacing: -.025em;
+}
+.assistant-info svg{
+    color: hsl(345 85% 60%);
+}
+.assistant-suggestions{
+    padding: 1.5rem;
+    padding-top: 0;
+    text-align: center;
+}
+.assistant-suggestions p{
+    margin: 0;
+    margin-bottom: 1.5rem;
+    color: hsl(240 4% 46%);
+}
+.assistant-button{
+    cursor: pointer;
+    display: inline-flex;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    white-space: nowrap;
+    border-radius: 0.8rem;
+    color: white;
+    background-color: hsl(345 85% 60%);
+    padding: .5rem 1rem;
+}
+.assistant-button:hover{
+    background-color: hsl(345deg 85% 60% / 90%);
+}
