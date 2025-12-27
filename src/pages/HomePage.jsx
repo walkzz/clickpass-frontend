@@ -3,14 +3,20 @@ import Toolbar from "../components/Toolbar";
 import EventList from "../components/EventList";
 import Assistant from "../components/Assistant";
 import Footer from "../components/Footer";
+import '../styles/HomePage.css'
+import Search from "../components/Search";
 const HomePage = () => {
   return (
     <>
       <Navbar />
-      <Toolbar />
-      <EventList />
-      <Assistant />
-      <Footer />
+      <div className='main-container'>
+        <Toolbar />
+        <Search />
+        <EventList />
+        <div class='horizontal-break'></div>
+        <Assistant />
+        <Footer />
+      </div>
     </>
   );
 };

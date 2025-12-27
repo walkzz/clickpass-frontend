@@ -1,4 +1,4 @@
 const Dropdown = () => {
-  return <div>Dropdown</div>;
+  return <div></div>;
 };
 export default Dropdown;

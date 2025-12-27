@@ -1,11 +1,12 @@
 import Search from "./Search";
 import Dropdown from "./Dropdown";
+import '../styles/Toolbar.css'
 const Toolbar = () => {
   return (
-    <div>
-      <Search />
-      <Dropdown />
-    </div> // example
+    <header className='toolbar-header'>
+          <h1>Find Your Next Experience</h1>
+          <p>Discover concerts, theater, cinema, and opera events.</p>
+    </header>
   );
 };
 export default Toolbar;
