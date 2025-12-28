@@ -1,0 +1,8 @@
+import Navbar from "../components/Navbar";
+
+const AboutPage = () =>{
+    return (
+        <Navbar />
+    );
+};
+export default AboutPage;
