@@ -13,7 +13,7 @@ const HomePage = () => {
         <Toolbar />
         <Search />
         <EventList />
-        <div class='horizontal-break'></div>
+        {/* <div className='horizontal-break'></div> */}
         <Assistant />
         <Footer />
       </div>
