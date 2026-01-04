@@ -1,4 +1,6 @@
 import '../styles/Footer.css'
+import '../styles/Navbar.css'
+import { NavLink } from "react-router-dom";
 const Footer = () => {
   return <footer>
     <div className='footer-container'>
@@ -7,11 +9,11 @@ const Footer = () => {
           <p>© 2025 ClickPass. All rights reserved.</p>
         </div>
         <nav className='footer-navigation'>
-          <a className='footer-link' href="">Home</a>
-          <a className='footer-link' href="">About</a>
-          <a className='footer-link' href="">Events</a>
-          <a className='footer-link' href="">Blogs</a>
-          <a className='footer-link' href="">Contact</a>
+          <NavLink className={"navigation-button"} to="/home">Home</NavLink>
+          <NavLink className={"navigation-button"} to="/about">About</NavLink>
+          <NavLink className={"navigation-button"} to="/events">Events</NavLink>
+          <NavLink className={"navigation-button"} to="/blogs">Blogs</NavLink>
+          <NavLink className={"navigation-button"} to="/contact">Contact</NavLink>
         </nav>
       </div>
     </div>
