@@ -1,8 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../styles/Dropdown.css';
 
 const Dropdown = ({ options, selected, onSelect }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
+  
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const handleSelect = (option) => {
     onSelect(option);
@@ -10,7 +24,7 @@ const Dropdown = ({ options, selected, onSelect }) => {
   };
 
   return (
-    <div className="dropdown">
+    <div className="dropdown" ref={dropdownRef}>
       <button
         className="dropdown-button"
         type="button"
