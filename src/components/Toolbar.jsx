@@ -1,7 +1,7 @@
 import Search from "./Search";
 import Dropdown from "./Dropdown";
 import '../styles/Toolbar.css'
-const Toolbar = () => {
+export default function Toolbar(){
   return (
     <header className='toolbar-header'>
           <h1>Find Your Next Experience</h1>
@@ -9,4 +9,3 @@ const Toolbar = () => {
     </header>
   );
 };
-export default Toolbar;
