@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <header className='header'>
         <div className="header-nav">
-          <a className="logo-nav" href="/">
+          <a className="logo-nav" href="/home">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-mouse-pointer-click h-6 w-6 text-primary">
               <path d="M14 4.1 12 6"></path><path d="m5.1 8-2.9-.8"></path>
               <path d="m6 12-1.9 2"></path><path d="M7.2 2.2 8 5.1"></path>
