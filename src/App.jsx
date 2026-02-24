@@ -2,7 +2,7 @@ import './App.css'
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import EventsPage from "./pages/EventsPage";
-import BlogsPage from "./pages/BlogsPage";
+import BlogPage from "./pages/BlogPage";
 import ContactPage from "./pages/ContactPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from './pages/RegisterPage';
@@ -18,7 +18,7 @@ function App() {
         <Route path="/home" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/events" element={<EventsPage />} />
-        <Route path="/blogs" element={<BlogsPage />} />
+        <Route path="/blogs" element={<BlogPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
