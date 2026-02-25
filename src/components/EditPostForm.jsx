@@ -29,6 +29,7 @@ const EditPostForm = ({ post, onPostUpdated, onCancel }) => {
         const data = await response.json();
         setError(data.message);
       }
+    // eslint-disable-next-line no-unused-vars
     } catch (err) {
       setError('Failed to update post');
     }

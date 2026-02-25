@@ -36,6 +36,7 @@ const CreatePostForm = ({ onPostCreated, onCancel }) => {
         const data = await response.json();
         setError(data.message || 'Failed to create post');
       }
+    // eslint-disable-next-line no-unused-vars
     } catch (err) {
       setError('Server error. Please ensure the backend is running.');
     }
