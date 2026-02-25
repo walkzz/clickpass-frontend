@@ -32,7 +32,7 @@ const Admin = () => {
     <div className="admin-layout">
       <AdminPalette activeTab={activeTab} setActiveTab={setActiveTab} />
       <div className="admin-content">
-        <button onClick={() => navigate('/')} className="back-link">
+        <button onClick={() => navigate('/home')} className="back-link">
           <span className="arrow">&larr;</span> Back to Home
         </button>
         <h1 style={{ fontSize: '28px', color: '#1f2937', marginBottom: '30px' }}>Admin Dashboard</h1>
