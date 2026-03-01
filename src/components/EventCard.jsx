@@ -55,7 +55,7 @@ const EventCard = ({ event }) => {
       <div style={{ padding: '0 1rem 1rem 1rem', marginTop: 'auto' }}>
         <button style={{
           width: '100%',
-          backgroundColor: '#f97316',
+          background: 'linear-gradient(90deg,rgba(239, 68, 68, 1) 0%, rgba(249, 115, 22, 1) 100%)', 
           color: 'white',
           padding: '10px 0',
           borderRadius: '8px',
@@ -69,6 +69,7 @@ const EventCard = ({ event }) => {
         onMouseOut={(e) => e.target.style.backgroundColor = '#f97316'}
         >
           Get Tickets
+          {/* arrow goes here */}
         </button>
       </div>
     </div>
