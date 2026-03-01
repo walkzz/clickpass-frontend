@@ -9,6 +9,10 @@ import RegisterPage from './pages/RegisterPage';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import ResetPasswordPage from './pages/ResetPasswordPage';
 import Admin from './pages/Admin';
+import EventDetail from './pages/EventDetail';
+import Checkout from './pages/OrderSummary'; 
+import PurchaseStatusCard from './pages/PurchaseStatusCard';
+
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 function App() {
@@ -20,6 +24,9 @@ function App() {
         <Route path="/home" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/events" element={<EventsPage />} />
+        <Route path="/events/:id" element={<EventDetail />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/purchase-status" element={<PurchaseStatusCard />} />
         <Route path="/blogs" element={<BlogPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/login" element={<LoginPage />} />
