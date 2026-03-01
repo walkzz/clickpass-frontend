@@ -4,6 +4,7 @@ import AdminPalette from '../components/AdminPalette';
 import EventTab from '../components/EventTab';
 import ManageUsersTab from '../components/ManageUsersTab';
 import ManageBlogsTab from '../components/ManageBlogsTab';
+import ManageTicketsTab from '../components/ManageTicketsTab';
 import '../styles/Admin.css';
 
 const Admin = () => {
@@ -32,7 +33,7 @@ const Admin = () => {
       case 'stats': 
         return <div><h2>Stats Overview Tab (Coming Soon)</h2></div>;
       case 'tickets': 
-        return <div><h2>Manage Tickets Tab (Coming Soon)</h2></div>;
+        return (userRole === 'organizer' || userRole === 'admin') ? <ManageTicketsTab /> : <div><h2>Unauthorized</h2></div>;
       default: 
         return <EventTab />;
     }
