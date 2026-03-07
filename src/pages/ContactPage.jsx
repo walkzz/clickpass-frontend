@@ -7,27 +7,51 @@ import '../styles/HomePage.css'
 
 const ContactPage = () => {
     const faqData = [
-        { question: "How can I purchase a ticket?", answer: "The tickets are located inside an event. Simply click one of the events you want to purchase tickets for and a panel from the right side will appear. Select the desired ticket type & quantity and then proceed to checkout." },
-        { question: "Which payment methods are currently supported?", answer: "The only payment method available at the moment is Mastercard." },
-        { question: "How can I purchase multiple different tickets? For example one premium and one standard?", answer: "In order to purchase different types of tickets, you have to make a separate purchase." },
-        { question: "My purchase didn't go through. What can I do?", answer: "Please send us a ticket through our contact form. Be sure to attach the unique ticket purchase code so we can look into the issue."},
-        { question: "How can I be an event organizer?", answer: "Please send us an email with your request and we will set-up your account shortly."},
-        { question: "Is my data secure?", answer: "Absolutely. We use industry-standard encryption to ensure your data is always safe."},
-        { question: "What is your refund policy?", answer: "At ClickPass, we aim to provide a fair and transparent refund process for ticket purchases. Refund eligibility depends on the event organizer’s terms, the type of ticket purchased, and the timing of your request. Unless otherwise stated on the event page, refund requests may be submitted within 30 days of the original purchase date. After this 30-day period, refunds cannot be issued. Please click the following link to learn more about our refund policy."},
         {
-  question: "What is your refund policy?",
-  answer: (
-    <>
-      At ClickPass, we aim to provide a fair and transparent refund process for
-      ticket purchases. Refund eligibility depends on the event organizer’s
-      terms, the type of ticket purchased, and the timing of your request.
-      Unless otherwise stated on the event page, refund requests may be
-      submitted within 30 days of the original purchase date. After this
-      30-day period, refunds cannot be issued. Learn more about our {" "}
-      <Link to="/refund-policy" style={{color: "#2563eb", textDecoration: "underline", fontWeight: "600"}}>refund policy</Link>.
-    </>
-  ),
-}
+            question: "How can I purchase a ticket?",
+            answer:
+                "The tickets are located inside an event. Simply click one of the events you want to purchase tickets for and a panel from the right side will appear. Select the desired ticket type & quantity and then proceed to checkout.",
+        },
+        {
+            question: "Which payment methods are currently supported?",
+            answer: "The only payment method available at the moment is Mastercard.",
+        },
+        {
+            question:
+                "How can I purchase multiple different tickets? For example one premium and one standard?",
+            answer:
+                "In order to purchase different types of tickets, you have to make a separate purchase.",
+        },
+        {
+            question: "My purchase didn't go through. What can I do?",
+            answer:
+                "Please send us a ticket through our contact form. Be sure to attach the unique ticket purchase code so we can look into the issue.",
+        },
+        {
+            question: "How can I be an event organizer?",
+            answer:
+                "Please send us an email with your request and we will set-up your account shortly.",
+        },
+        {
+            question: "Is my data secure?",
+            answer:
+                "Absolutely. We use industry-standard encryption to ensure your data is always safe.",
+        },
+        { question: "Is my data secure?", answer: "Absolutely. We use industry-standard encryption to ensure your data is always safe." },
+        {
+            question: "What is your refund policy?",
+            answer: (
+                <>
+                    At ClickPass, we aim to provide a fair and transparent refund process for
+                    ticket purchases. Refund eligibility depends on the event organizer’s
+                    terms, the type of ticket purchased, and the timing of your request.
+                    Unless otherwise stated on the event page, refund requests may be
+                    submitted within 30 days of the original purchase date. After this
+                    30-day period, refunds cannot be issued. Learn more about our {" "}
+                    <Link to="/refund-policy" style={{ color: "#2563eb", textDecoration: "underline", fontWeight: "600" }}>refund policy</Link>.
+                </>
+            ),
+        }
 
     ];
 
