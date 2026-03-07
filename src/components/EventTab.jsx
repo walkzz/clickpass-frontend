@@ -3,32 +3,28 @@ import EventForm from './EventForm';
 
 const EventTab = () => {
   const [events, setEvents] = useState([]);
+  const [stats, setStats] = useState({ totalTickets: 0, totalRevenue: 0 });
   
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [eventToEdit, setEventToEdit] = useState(null);
 
-  const fetchEvents = async () => {
+  const fetchData = async () => {
     try {
-      const token = localStorage.getItem('token'); // Grab the security token
-      
-      // Call the secure dashboard route and attach the token in the headers
-      const res = await fetch('http://localhost:3000/api/events/dashboard', {
-        headers: {
-          'Authorization': `Bearer ${token}`
-        }
-      });
-      
-      if (res.ok) {
-        const data = await res.json();
-        setEvents(data);
-      }
+      const token = localStorage.getItem('token');
+      const headers = { 'Authorization': `Bearer ${token}` };
+
+      const eventsRes = await fetch('http://localhost:3000/api/events/dashboard', { headers });
+      if (eventsRes.ok) setEvents(await eventsRes.json());
+
+      const statsRes = await fetch('http://localhost:3000/api/events/dashboard/stats', { headers });
+      if (statsRes.ok) setStats(await statsRes.json());
     } catch (err) {
-      console.error("Failed to fetch events");
+      console.error("Failed to fetch data");
     }
   };
 
   useEffect(() => {
-    fetchEvents();
+    fetchData();
   }, []);
 
   const handleDelete = async (id) => {
@@ -40,7 +36,7 @@ const EventTab = () => {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });
-      if (res.ok) fetchEvents(); // Refresh the table
+      if (res.ok) fetchData(); 
     } catch (err) {
       console.error("Failed to delete event");
     }
@@ -56,27 +52,8 @@ const EventTab = () => {
     setIsFormOpen(true);
   };
 
-  const closeForm = () => {
-    setIsFormOpen(false);
-    setEventToEdit(null);
-  };
-
   if (isFormOpen) {
-    return (
-      <div className="management-card">
-        <button onClick={closeForm} className="back-link" style={{marginBottom: '1rem'}}>
-           Cancel
-        </button>
-        <EventForm 
-          eventToEdit={eventToEdit} 
-          onSave={() => {
-            fetchEvents();
-            closeForm();
-          }} 
-          onCancel={closeForm} 
-        />
-      </div>
-    );
+    return <EventForm eventToEdit={eventToEdit} onSave={() => { setIsFormOpen(false); fetchData(); }} onCancel={() => setIsFormOpen(false)} />;
   }
 
   return (
@@ -92,23 +69,23 @@ const EventTab = () => {
         <div className="stat-card">
           <div>
             <p className="stat-card-title">Tickets Sold</p>
-            <p className="stat-card-value">0</p>
+            <p className="stat-card-value">{stats.totalTickets}</p>
           </div>
           <span className="stat-icon">🎟️</span>
         </div>
         <div className="stat-card">
           <div>
-            <p className="stat-card-title">Total Revenue</p>
-            <p className="stat-card-value">$0</p>
+            <p className="stat-card-title">Total Revenue</p> 
+            <p className="stat-card-value">€{stats.totalRevenue.toFixed(2)}</p>
           </div>
-          <span className="stat-icon">$</span>
+          <span className="stat-icon">€</span>
         </div>
       </div>
 
       <div className="management-card">
         <div className="management-header">
           <h2 className="management-title">Event Management</h2>
-          <button onClick={handleCreateClick} className="btn-pink">⊕ Create Event</button>
+          <button onClick={handleCreateClick} className="btn-pink">+ Create Event</button>
         </div>
 
         <table className="admin-table">
