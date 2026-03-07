@@ -1,11 +1,13 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import '../styles/HomePage.css'
 import "../styles/AboutPage.css";
 
 export default function AboutPage() {
     return (
         <>
             <Navbar />
+            <div className="main-container">
             <div className="about-page">
                 <section className="section">
                     <div className="info-card">
@@ -103,6 +105,7 @@ export default function AboutPage() {
                 </section>
             </div>
             <Footer />
+            </div>
         </>
     );
 }
