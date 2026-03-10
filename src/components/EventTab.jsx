@@ -4,12 +4,16 @@ import EventForm from './EventForm';
 const EventTab = () => {
   const [events, setEvents] = useState([]);
   const [stats, setStats] = useState({ totalTickets: 0, totalRevenue: 0 });
+  const [currentUser, setCurrentUser] = useState(null);
   
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [eventToEdit, setEventToEdit] = useState(null);
 
   const fetchData = async () => {
     try {
+      const user = JSON.parse(localStorage.getItem('user'));
+      setCurrentUser(user);
+
       const token = localStorage.getItem('token');
       const headers = { 'Authorization': `Bearer ${token}` };
 
@@ -102,18 +106,24 @@ const EventTab = () => {
             {events.length === 0 ? (
                <tr><td colSpan="5" style={{textAlign: 'center', color: '#6b7280'}}>No events found. Create one!</td></tr>
             ) : (
-              events.map(event => (
-                <tr key={event._id}>
-                  <td style={{ fontWeight: '500' }}>{event.title}</td>
-                  <td><span className="category-badge">{event.Category || 'Event'}</span></td>
-                  <td>{new Date(event.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</td>
-                  <td>{event.location?.city || 'TBD'}</td>
-                  <td style={{ textAlign: 'right' }}>
-                    <button onClick={() => handleEditClick(event)} className="action-icon">✏️</button>
-                    <button onClick={() => handleDelete(event._id)} className="action-icon" style={{color: 'red'}}>🗑️</button>
-                  </td>
-                </tr>
-              ))
+              events.map(event => {
+                const isOwner = currentUser && (event.organizerId === currentUser.id || event.organizerId === currentUser._id || event.organizer === currentUser.id || event.organizer === currentUser._id);
+
+                return (
+                  <tr key={event._id}>
+                    <td style={{ fontWeight: '500' }}>{event.title}</td>
+                    <td><span className="category-badge">{event.Category || 'Event'}</span></td>
+                    <td>{new Date(event.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</td>
+                    <td>{event.location?.city || 'TBD'}</td>
+                    <td style={{ textAlign: 'right' }}>
+                      {isOwner && (
+                        <button onClick={() => handleEditClick(event)} className="action-icon">✏️</button>
+                      )}
+                      <button onClick={() => handleDelete(event._id)} className="action-icon" style={{color: 'red'}}>🗑️</button>
+                    </td>
+                  </tr>
+                );
+              })
             )}
           </tbody>
         </table>
