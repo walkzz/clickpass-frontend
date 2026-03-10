@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import '../styles/Admin.css';
 
-const EventForm = ({ eventToEdit, onSave, onCancel }) => {
+const EventForm = ({ eventToEdit, onSave}) => {
   const [formData, setFormData] = useState({
     title: eventToEdit?.title || '',
     shortDescription: '', 
