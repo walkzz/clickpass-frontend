@@ -10,7 +10,8 @@ const EventForm = ({ eventToEdit, onSave}) => {
     location: eventToEdit?.location?.city || '',
     date: eventToEdit?.date ? eventToEdit.date.split('T')[0] : '',
     startTime: eventToEdit?.startTime || '',
-    venue: eventToEdit?.venue || ''
+    venue: eventToEdit?.venue || '',
+    capacity: eventToEdit?.capacity || ''
   });
 
   const [imageFile, setImageFile] = useState(null);
@@ -27,10 +28,10 @@ const EventForm = ({ eventToEdit, onSave}) => {
     submitData.append('venue', formData.venue);
     submitData.append('date', formData.date);
     submitData.append('startTime', formData.startTime);
-    submitData.append('capacity', 500);
+    submitData.append('capacity', formData.capacity);
 
     submitData.append('location', JSON.stringify({ city: formData.location, address: 'TBD', country: 'TBD' }));
-    submitData.append('ticketTypes', JSON.stringify([{ type: 'General', price: 0, quantity: 500 }]));
+    // submitData.append('ticketTypes', JSON.stringify([{ type: 'General', price: 0, quantity: 500 }]));
 
     if (imageFile) {
         submitData.append('image', imageFile);
@@ -56,6 +57,7 @@ const EventForm = ({ eventToEdit, onSave}) => {
         const data = await response.json();
         setError(data.message || 'Failed to save event');
       }
+    // eslint-disable-next-line no-unused-vars
     } catch (err) {
       setError('Server error. Please ensure the backend is running.');
     }
@@ -118,6 +120,11 @@ const EventForm = ({ eventToEdit, onSave}) => {
               <label className="input-label">Venue</label>
               <input type="text" className="auth-input" placeholder="e.g., The Grand Playhouse" value={formData.venue} onChange={(e) => setFormData({...formData, venue: e.target.value})} required />
             </div>
+          </div>
+
+          <div className="input-group">
+            <label className="input-label">Venue Capacity</label>
+            <input type="number" min="1" className="auth-input" placeholder="e.g., 500" value={formData.capacity} onChange={(e) => setFormData({...formData, capacity: e.target.value})} required />
           </div>
 
           <div className="input-group" style={{ marginBottom: '10px' }}>
