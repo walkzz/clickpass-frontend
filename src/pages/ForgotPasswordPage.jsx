@@ -27,6 +27,7 @@ const ForgotPasswordPage = () => {
       } else {
         setError(data.message || 'Something went wrong. Please try again.');
       }
+    // eslint-disable-next-line no-unused-vars
     } catch (err) {
       setError('Server error. Please ensure the backend is running.');
     }
