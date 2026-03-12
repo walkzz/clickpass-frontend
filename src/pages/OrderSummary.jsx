@@ -45,6 +45,7 @@ const Checkout = () => {
       } else {
         alert(data.message || 'Payment failed');
       }
+    // eslint-disable-next-line no-unused-vars
     } catch (error) {
       alert('Network error. Please try again.');
     } finally {

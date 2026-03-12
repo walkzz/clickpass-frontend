@@ -34,6 +34,7 @@ const RegisterPage = () => {
       } else {
         setError(data.message || 'Registration failed');
       }
+    // eslint-disable-next-line no-unused-vars
     } catch (err) {
       setError('Server error. Please ensure the backend is running.');
     }

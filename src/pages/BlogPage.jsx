@@ -33,6 +33,7 @@ const BlogPage = () => {
         const data = await res.json();
         setPosts(data);
       }
+    // eslint-disable-next-line no-unused-vars
     } catch (err) {
       console.error("Failed to fetch posts");
     }
