@@ -37,7 +37,6 @@ const ContactPage = () => {
             answer:
                 "Absolutely. We use industry-standard encryption to ensure your data is always safe.",
         },
-        { question: "Is my data secure?", answer: "Absolutely. We use industry-standard encryption to ensure your data is always safe." },
         {
             question: "What is your refund policy?",
             answer: (
