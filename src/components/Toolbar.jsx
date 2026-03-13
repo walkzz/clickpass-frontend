@@ -1,11 +1,10 @@
-import Search from "./Search";
-import Dropdown from "./Dropdown";
 import '../styles/Toolbar.css'
-export default function Toolbar(){
+const Toolbar = ({title = "Find Your Next Experience", subtitle = "Discover concerts, theater, cinema, and opera events."}) => {
   return (
     <header className='toolbar-header'>
-          <h1>Find Your Next Experience</h1>
-          <p>Discover concerts, theater, cinema, and opera events.</p>
+          <h1>{title}</h1>
+          <p>{subtitle}</p>
     </header>
   );
 };
+export default Toolbar;
