@@ -30,8 +30,8 @@ const Admin = () => {
         return userRole === 'admin' ? <ManageUsersTab /> : <div><h2>Unauthorized</h2></div>;
       case 'blogs': 
         return userRole === 'admin' ? <ManageBlogsTab /> : <div><h2>Unauthorized</h2></div>;
-      case 'stats': 
-        return <div><h2>Stats Overview Tab (Coming Soon)</h2></div>;
+      // case 'stats': 
+      //   return <div><h2>Stats Overview Tab (Coming Soon)</h2></div>;
       case 'tickets': 
         return (userRole === 'organizer' || userRole === 'admin') ? <ManageTicketsTab /> : <div><h2>Unauthorized</h2></div>;
       default: 

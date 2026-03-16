@@ -3,7 +3,7 @@ import React from 'react';
 const AdminPalette = ({ activeTab, setActiveTab }) => {
   const tabs = [
     { id: 'events', label: 'Events' },
-    { id: 'stats', label: 'Stats Overview' },
+    // { id: 'stats', label: 'Stats Overview' },
     { id: 'tickets', label: 'Manage Tickets' },
     { id: 'users', label: 'Manage Users' },
     { id: 'blogs', label: 'Blog Management' },
