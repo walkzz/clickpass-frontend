@@ -27,10 +27,18 @@ const LoginPage = () => {
         localStorage.setItem('token', data.token);
         localStorage.setItem('user', JSON.stringify({ id: data._id, fullName: data.fullName, role: data.role }));
         
-        navigate('/home');
+        const pendingCheckout = sessionStorage.getItem('pendingCheckout');
+        if(pendingCheckout){
+          const checkoutData = JSON.parse(pendingCheckout);
+          sessionStorage.removeItem('pendingCheckout'); 
+          navigate('/checkout', { state: checkoutData });
+        } else {
+          navigate('/home')
+        }
       } else {
         setError(data.message || 'Invalid email or password');
       }
+    // eslint-disable-next-line no-unused-vars
     } catch (err) {
       setError('Server error. Please ensure the backend is running.');
     }
