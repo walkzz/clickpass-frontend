@@ -1,29 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/Search.css';
 import Dropdown from './Dropdown';
 
-const Search = () => {
-  const categoryOptions = [
-    "All",
-    "Theater",
-    "Concert",
-    "Cinema",
-    "Opera"
-  ];
-
-  const locationOptions = [
-    "All",
-    "New York, NY",
-    "Los Angeles, CA",
-    "Chicago, IL",
-    "London, UK",
-    "New Orleans, LA",
-    "Boston, MA",
-    "Seattle, WA",
-    "Berlin, DE"
-  ];
+const Search = ({ events = [], onSearch }) => {
+  const [searchTerm, setSearchTerm] = useState("");
   const [category, setCategory] = useState("All");
   const [location, setLocation] = useState("All");
+  const categoryOptions = ["All", ...new Set(events.map(e => e.Category).filter(Boolean))];
+  const locationOptions = ["All", ...new Set(events.map(e => e.location?.city).filter(Boolean))];
+  
+  useEffect(() => {
+    if (onSearch) {
+      onSearch({ searchTerm, category, location });
+    }
+  }, [searchTerm, category, location, onSearch]);
 
   return (
     <div className='search-bar'>
@@ -43,7 +33,12 @@ const Search = () => {
           <circle cx="11" cy="11" r="8"></circle>
           <path d="m21 21-4.3-4.3"></path>
         </svg>
-        <input type="text" placeholder="Search by event name..." />
+        <input 
+          type="text" 
+          placeholder="Search by event name..." 
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
       </div>
       <div className='dropdown-container'>
         <Dropdown
