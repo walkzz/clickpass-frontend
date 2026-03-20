@@ -5,8 +5,14 @@
     flex-direction: column;
     overflow: hidden;
     border-style: none;
+    border-bottom-left-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
+    transition: transform .3s ease-in-out;
     background-color: hsl(0 0% 100%);
-    animation-timing-function: cubic-bezier(.4,0,.2,1);
+}
+.event-card-container:hover{
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transform: translateY(-0.25rem);
     animation-duration: .3s;
 }
 .event-card-container svg{
