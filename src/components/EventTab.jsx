@@ -107,7 +107,8 @@ const EventTab = () => {
                <tr><td colSpan="5" style={{textAlign: 'center', color: '#6b7280'}}>No events found. Create one!</td></tr>
             ) : (
               events.map(event => {
-                const isOwner = currentUser && (event.organizerId === currentUser.id || event.organizerId === currentUser._id || event.organizer === currentUser.id || event.organizer === currentUser._id);
+                const isOwner = currentUser && 
+                ( currentUser.role === 'admin' || event.organizerId === currentUser.id || event.organizer === currentUser.id );
 
                 return (
                   <tr key={event._id}>
