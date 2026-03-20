@@ -67,7 +67,7 @@ const ContactPage = () => {
                         <div className="map-container">
                             <h2>Find Us</h2>
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.9873196845941!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1622222222222!5m2!1sen!2sus"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d855.7563888182319!2d21.426731051207!3d41.99549999143219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1354144b3b24c72f%3A0x1ba74d07944729e8!2sDimitrija%20Chupovski%2020%2C%20Skopje%201000!5e1!3m2!1sen!2smk!4v1773970165307!5m2!1sen!2smk"
                                 width="100%"
                                 height="400"
                                 style={{ border: 0, borderRadius: '8px' }}
