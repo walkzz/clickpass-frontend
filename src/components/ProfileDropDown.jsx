@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import '../styles/ProfileDropDown.css';
 
 const UserProfileDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem('user'));
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -12,11 +14,19 @@ const UserProfileDropdown = () => {
     navigate('/login');
   };
 
+  if (!user) {
+    return (
+      <button className='sign-in' 
+        onClick={() => navigate('/login')}
+      >
+        Sign In
+      </button>
+    );
+  }
   return (
-    <div style={{ position: 'relative', display: 'inline-block' }}>
-      <button 
+    <div className='panel-open'>
+      <button className='panel-button'
         onClick={() => setIsOpen(!isOpen)}
-        style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '5px' }}
         aria-label="User menu"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-circle-user-round h-6 w-6">
@@ -27,43 +37,20 @@ const UserProfileDropdown = () => {
       </button>
 
       {isOpen && (
-        <div style={{
-          position: 'absolute',
-          right: 0,
-          top: '100%',
-          marginTop: '8px',
-          backgroundColor: 'white',
-          border: '1px solid #e5e7eb',
-          borderRadius: '8px',
-          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
-          minWidth: '150px',
-          display: 'flex',
-          flexDirection: 'column',
-          zIndex: 50,
-          overflow: 'hidden'
-        }}>
+        <div className='panel-options'>
           
           <Link 
+            className='admin-button'
             to="/admin" 
-            style={{ padding: '10px 16px', textDecoration: 'none', color: '#374151', borderBottom: '1px solid #e5e7eb' }}
             onClick={() => setIsOpen(false)}
           >
             Admin Panel
           </Link>
 
-          <button 
+          <button className='logout-button'
             onClick={handleLogout}
-            style={{ 
-              padding: '10px 16px', 
-              background: 'none', 
-              border: 'none', 
-              textAlign: 'left', 
-              color: '#ef4444',
-              cursor: 'pointer',
-              fontWeight: '500'
-            }}
           >
-            Log out
+            <span>Log Out</span>
           </button>
         </div>
       )}
