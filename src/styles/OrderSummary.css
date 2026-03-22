@@ -3,15 +3,23 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: PT Sans, sans-serif;
 }
 
 .checkout-content {
-  max-width: 1000px;
+  max-width: 56rem;
   margin: 40px auto;
   padding: 0 24px;
   width: 100%;
   box-sizing: border-box;
+}
+
+.checkout-header{
+  font-weight: 600;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .back-link {
@@ -23,7 +31,7 @@
   font-size: 15px;
   font-weight: 500;
   margin-bottom: 24px;
-  transition: color 0.2s;
+  transition: background-color .15s ease;
 }
 
 .back-link:hover {
@@ -103,9 +111,11 @@
 
 .payment-input {
   width: 100%;
-  padding: 16px 16px 16px 48px;
-  background-color: #f9fafb;
-  border: 1px solid #f3f4f6;
+  padding-left: 2.5rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  padding-right: .75rem;
+  border: 2px solid #f3f4f6;
   border-radius: 8px;
   font-size: 15px;
   color: #374151;
@@ -115,7 +125,7 @@
 }
 
 .payment-input:focus {
-  border-color: #f43f5e;
+  border-color: #F0426E;
   background-color: #ffffff;
 }
 
