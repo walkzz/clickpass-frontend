@@ -126,7 +126,7 @@
   border: none;
   padding: 8px 20px;
   border-radius: 25px;
-  transition: all 0.3s ease;
+  transition: background-color .15s ease;
 }
 
 .back-link .arrow {
@@ -135,8 +135,7 @@
   margin-bottom: 2px;
 }
 .back-link:hover { 
-  background-color: #fcd34d;
-  color: #1e3a8a;
+  background-color: hsl(45 93% 68%);
 }
 
 .event-form-container {
