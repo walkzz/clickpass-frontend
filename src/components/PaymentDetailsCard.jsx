@@ -33,6 +33,7 @@ const PaymentDetailsCard = ({ onValidityChange, showErrors }) => {
       <div className="input-group">
         <label className="input-label">Card Number</label>
         <div className="input-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-credit-card absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground"><rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" x2="22" y1="10" y2="10"></line></svg>
           <input 
             type="text" 
             placeholder="0000 0000 0000 0000" 
@@ -50,6 +51,7 @@ const PaymentDetailsCard = ({ onValidityChange, showErrors }) => {
         <div className="input-group">
           <label className="input-label">Expiry Date</label>
           <div className="input-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>
             <input 
               type="text" 
               placeholder="MM/YY" 
@@ -65,6 +67,7 @@ const PaymentDetailsCard = ({ onValidityChange, showErrors }) => {
         <div className="input-group">
           <label className="input-label">CVC</label>
           <div className="input-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
             <input 
               type="text" 
               placeholder="123" 
