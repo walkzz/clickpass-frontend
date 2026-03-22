@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import PaymentDetailsCard from '../components/PaymentDetailsCard';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import '../styles/OrderSummary.css';
 
 const Checkout = () => {
@@ -54,10 +56,12 @@ const Checkout = () => {
   };
 
   return (
+    <>
+    <Navbar />
     <div className="checkout-container">
       <div className="checkout-content">
-        <Link to={`/events/${event._id}`} className="back-link">&larr; Back to Event</Link>
-
+        <Link to={`/events/${event._id}`} className="back-link">&larr; Back</Link>
+        <h1 className='checkout-header'>Complete Purchase</h1>
         <div className="checkout-grid">
           <div className="summary-card">
             <h2 className="card-title">Order Summary</h2>
@@ -82,6 +86,8 @@ const Checkout = () => {
         </div>
       </div>
     </div>
+    <Footer />
+    </>
   );
 };
 
