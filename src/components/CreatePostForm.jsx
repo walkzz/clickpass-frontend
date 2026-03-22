@@ -69,7 +69,7 @@ const CreatePostForm = ({ onPostCreated, onCancel }) => {
             <option value="NEWS">Culture & Fun News</option>
             <option value="TRAVEL">Travel Advice</option>
             <option value="INTERVIEW">Interviews</option>
-            <option value="EVENTS">Festivals & Events</option>
+            <option value="EVENTS">Events</option>
             <option value="GENERAL">General Discussion</option>
           </select>
         </div>
