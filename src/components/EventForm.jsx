@@ -98,7 +98,6 @@ const EventForm = ({ eventToEdit, onSave}) => {
                 <option value="Concert">Concert</option>
                 <option value="Cinema">Cinema</option>
                 <option value="Opera">Opera</option>
-                <option value="Festival">Festival</option>
               </select>
             </div>
             <div className="input-group">
