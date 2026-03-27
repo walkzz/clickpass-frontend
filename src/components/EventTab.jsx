@@ -23,8 +23,8 @@ const EventTab = () => {
 
       const statsRes = await fetch('http://localhost:3000/api/events/dashboard/stats', { headers });
       if (statsRes.ok) setStats(await statsRes.json());
-    } catch (err) {
-      console.error("Failed to fetch data");
+    } catch (error) {
+      console.error("Failed to fetch data", error);
     }
   };
 
@@ -42,8 +42,8 @@ const EventTab = () => {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (res.ok) fetchData(); 
-    } catch (err) {
-      console.error("Failed to delete event");
+    } catch (error) {
+      console.error("Failed to delete event", error);
     }
   };
 
