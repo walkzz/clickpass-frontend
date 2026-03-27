@@ -157,7 +157,6 @@ const ManageTicketsTab = () => {
           {/* orders section*/}
           <div style={{ marginTop: '40px', backgroundColor: '#ffffff', padding: '24px', borderRadius: '12px', border: '1px solid #e5e7eb', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}>
             <h3 style={{ marginTop: 0, marginBottom: '20px', fontSize: '20px', color: '#111827' }}>Recent Orders</h3>
-            
             {orders.length === 0 ? (
               <p style={{ color: '#6b7280' }}>No orders have been placed for this event yet.</p>
             ) : (
