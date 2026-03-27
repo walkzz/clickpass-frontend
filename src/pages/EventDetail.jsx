@@ -113,7 +113,7 @@ const EventDetail = () => {
 
             <div className='event-description-container'>
               <span className='event-category'>
-                🎵 {event.Category || 'Concert'}
+                {event.Category || 'Concert'}
               </span>
 
               <h1 className='event-description-header'>
