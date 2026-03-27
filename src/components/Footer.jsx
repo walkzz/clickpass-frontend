@@ -6,7 +6,7 @@ const Footer = () => {
     <div className='footer-container'>
       <div className='footer-section'>
         <div className='footer-copyright'>
-          <p>© 2025 ClickPass. All rights reserved.</p>
+          <p>© 2026 ClickPass. All rights reserved.</p>
         </div>
         <nav className='footer-navigation'>
           <NavLink className={"navigation-button"} to="/home">Home</NavLink>
