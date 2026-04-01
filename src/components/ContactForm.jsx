@@ -58,7 +58,7 @@ const ContactForm = () => {
                 <textarea 
                     name="message" placeholder="Your Message" rows="5"
                     value={formData.message} onChange={handleChange} required 
-                    style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
+                    style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc', resize: 'vertical' }}
                 />
                 <button type="submit" style={{ padding: '10px', background: '#2563eb', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>
                     Send Message
