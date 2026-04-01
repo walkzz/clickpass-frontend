@@ -36,7 +36,7 @@ const HomePage = () => {
         <Toolbar />
         <Search events={allEvents} onSearch={handleSearch} />
         
-        <div style={{ margin: '40px 0' }}>
+        <div style={{ margin: '40px 0'}}>
           {loading ? (
             <p style={{ color: '#6b7280' }}>Loading events...</p>
           ) : (
@@ -57,6 +57,7 @@ const HomePage = () => {
             </div>
           )}
         </div>
+        <div className="section-divider" /> {/* horizontal line */}
         <Assistant />
         <Footer />
       </div>
