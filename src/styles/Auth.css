@@ -55,6 +55,7 @@
     outline: none;
     transition: border-color 0.2s;
     color: #374151;
+    resize: vertical;
 }
 
 .auth-input:focus {
@@ -83,7 +84,7 @@
 .auth-btn-primary {
     width: 100%;
     padding: 14px;
-    background-color: #c4c4c4;
+    background-color: #a3a3a3;
     color: white;
     border: none;
     border-radius: 25px;
@@ -96,7 +97,7 @@
 }
 
 .auth-btn-primary:hover {
-    background-color: #a3a3a3;
+    background-color: #c4c4c4;
 }
 
 .legal-text {
