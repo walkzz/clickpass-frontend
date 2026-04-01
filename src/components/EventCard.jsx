@@ -6,7 +6,6 @@ const EventCard = ({ event }) => {
   const formattedDate = new Date(event.date).toLocaleDateString('en-US', { 
     month: 'short', day: 'numeric', year: 'numeric' 
   });
-  // console.log("Event Data for", event.title, ":", event);
 
   return (
     <div className='event-card-container' onClick={() => navigate(`/events/${event._id}`)} style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between' }}>
@@ -30,7 +29,7 @@ const EventCard = ({ event }) => {
           
           <h3 className='event-title'>{event.title}</h3>
           
-          <div className='event-details-container'>
+          <div className='event-details-container' style={{gap: '2px'}}>
             <div className='event-time-container'>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
@@ -52,24 +51,13 @@ const EventCard = ({ event }) => {
         </div>
       </div>
 
-      <div style={{ padding: '0 1rem 1rem 1rem', marginTop: 'auto' }}>
-        <button style={{
-          width: '100%',
-          background: 'linear-gradient(90deg,rgba(239, 68, 68, 1) 0%, rgba(249, 115, 22, 1) 100%)', 
-          color: 'white',
-          padding: '10px 0',
-          borderRadius: '8px',
-          border: 'none',
-          fontWeight: 'bold',
-          fontSize: '14px',
-          cursor: 'pointer',
-          transition: 'background-color 0.2s ease'
-        }}
-        onMouseOver={(e) => e.target.style.backgroundColor = '#ea580c'}
-        onMouseOut={(e) => e.target.style.backgroundColor = '#f97316'}
+      <div className='event-card-ticket-container'>
+        <button className='event-card-button'
+        // onMouseOver={(e) => e.target.style.backgroundColor = '#ea580c'}
+        // onMouseOut={(e) => e.target.style.backgroundColor = '#f97316'}
         >
           Get Tickets
-          {/* arrow goes here */}
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-2 h-4 w-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
         </button>
       </div>
     </div>
