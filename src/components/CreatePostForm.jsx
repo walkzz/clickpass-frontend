@@ -97,7 +97,7 @@ const CreatePostForm = ({ onPostCreated, onCancel }) => {
 
         <div style={{ display: 'flex', gap: '10px' }}>
           <button type="submit" className="auth-btn-primary">Publish Post</button>
-          <button type="button" className="auth-btn-primary" style={{ backgroundColor: '#9ca3af' }} onClick={onCancel}>Cancel</button>
+          <button type="button" className="auth-btn-primary" style={{ backgroundColor: '#f43f5e' }} onClick={onCancel}>Cancel</button>
         </div>
       </form>
     </div>
