@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import '../styles/ContactForm.css';
 
 const ContactForm = () => {
     const [formData, setFormData] = useState({
@@ -37,30 +38,30 @@ const ContactForm = () => {
     };
 
     return (
-        <div className="contact-form-container" style={{ padding: '20px', maxWidth: '500px' }}>
+        <div className="contact-form-container">
             <h2>Contact Us</h2>
-            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+            <form className='submit-fields-container' onSubmit={handleSubmit}>
                 <input 
+                    className='submit-form-inputs'
                     type="text" name="firstName" placeholder="First Name" 
                     value={formData.firstName} onChange={handleChange} required 
-                    style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
                 />
                 <input 
+                    className='submit-form-inputs'
                     type="text" name="lastName" placeholder="Last Name" 
                     value={formData.lastName} onChange={handleChange} required 
-                    style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
                 />
                 <input 
+                    className='submit-form-inputs'
                     type="email" name="email" placeholder="Email" 
                     value={formData.email} onChange={handleChange} required 
-                    style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
                 />
                 <textarea 
+                    className='submit-text-area'
                     name="message" placeholder="Your Message" rows="5"
                     value={formData.message} onChange={handleChange} required 
-                    style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc', resize: 'vertical' }}
                 />
-                <button type="submit" style={{ padding: '10px', background: '#2563eb', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>
+                <button className='submit-message' type="submit">
                     Send Message
                 </button>
             </form>
