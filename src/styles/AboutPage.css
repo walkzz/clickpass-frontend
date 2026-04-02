@@ -13,11 +13,11 @@
 .section p {
     font-size: 15px;
     line-height: 1.7;
-    color: #6b7280;
+    color: #51555f;
 }
 
 .info-card {
-    background: #ffffff;
+    background: linear-gradient(135deg, #eff6ff, #ffffff);
     border: 1px solid #e5e7eb;
     border-radius: 16px;
     padding: 26px;
@@ -80,6 +80,12 @@
     font-size: 14px;
     font-weight: 500;
     color: #111827;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.value-item:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
 }
 
 .contact-links {
