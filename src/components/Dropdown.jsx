@@ -60,7 +60,7 @@ const Dropdown = ({ options, selected, onSelect }) => {
                 )}
               </div>
 
-              <span>{option}</span>
+              <span className='dropdown-item-category'>{option}</span>
             </div>
           ))}
         </div>

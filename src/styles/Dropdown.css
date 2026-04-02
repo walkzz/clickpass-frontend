@@ -43,6 +43,11 @@
     border-radius: 0.5rem;
     cursor: pointer;
     font-size: 0.875rem;
+    text-transform: lowercase;
+}
+
+.dropdown-item-category::first-letter {
+    text-transform: uppercase;
 }
 
 .dropdown-item:hover {
