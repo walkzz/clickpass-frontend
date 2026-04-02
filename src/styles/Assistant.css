@@ -48,9 +48,10 @@
     white-space: nowrap;
     border-radius: 0.8rem;
     color: white;
-    background-color: hsl(345 85% 60%);
+    background-color: #f43f5e;
+    transition: background-color 0.2s;
     padding: .5rem 1rem;
 }
 .assistant-button:hover{
-    background-color: hsl(345deg 85% 60% / 90%);
+    background-color: #e11d48;
 }
