@@ -1,0 +1,43 @@
+.contact-form-container {
+    padding: 20px;
+    max-width: 500px;
+}
+
+.submit-fields-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.submit-form-inputs {
+    padding: 10px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.submit-form-inputs:focus-within {
+    border: 2px solid #ff3b6b;
+}
+
+.submit-text-area {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    outline: none;
+    font-family: PT Sans, sans-serif;
+}
+
+.submit-text-area:focus-within {
+    border: 2px solid #ff3b6b;
+}
+
+.submit-message {
+    padding: 10px;
+    background-color: #f43f5e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
