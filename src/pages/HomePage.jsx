@@ -58,7 +58,7 @@ const HomePage = () => {
           )}
         </div>
         <div className="section-divider" /> {/* horizontal line */}
-        <Assistant />
+        <Assistant events={displayedEvents} />
         <Footer />
       </div>
     </>
