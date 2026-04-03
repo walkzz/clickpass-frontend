@@ -1,5 +1,8 @@
+import useRandomEvent from '../hooks/useRandomEvent';
 import '../styles/Assistant.css'
-const Assistant = () => {
+const Assistant = ({ events = [] }) => {
+  const { goToRandomEvent } = useRandomEvent(events);
+  
   return <div className="assistant-section">
     <div className='assistant-container'>
       <div className='assistant-details'>
@@ -21,7 +24,10 @@ const Assistant = () => {
         <p>
           Let our AI assistant suggest events you might love based on your interests.
         </p>
-        <button className='assistant-button'>
+        <button 
+        className='assistant-button'
+        onClick={goToRandomEvent}
+        disabled={events.length === 0}>
           Get AI Recommendations
         </button>
       </div>
