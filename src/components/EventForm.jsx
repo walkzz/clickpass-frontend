@@ -77,17 +77,17 @@ const EventForm = ({ eventToEdit, onSave}) => {
         <form onSubmit={handleSubmit}>
           <div className="input-group">
             <label className="input-label">Event Title</label>
-            <input type="text" className="auth-input" placeholder="e.g., Echoes of the Stage" value={formData.title} onChange={(e) => setFormData({...formData, title: e.target.value})} required />
+            <input type="text" className="auth-input" placeholder="" value={formData.title} onChange={(e) => setFormData({...formData, title: e.target.value})} required />
           </div>
 
-          <div className="input-group">
+          {/* <div className="input-group">
             <label className="input-label">Short Description</label>
-            <textarea className="auth-input" rows="2" placeholder="A compelling play about..." value={formData.shortDescription} onChange={(e) => setFormData({...formData, shortDescription: e.target.value})} />
-          </div>
+            <textarea className="auth-input" rows="2" placeholder="" value={formData.shortDescription} onChange={(e) => setFormData({...formData, shortDescription: e.target.value})} />
+          </div> */}
 
           <div className="input-group">
             <label className="input-label">Long Description</label>
-            <textarea className="auth-input" rows="4" placeholder="Dive deep into the story..." value={formData.description} onChange={(e) => setFormData({...formData, description: e.target.value})} required />
+            <textarea className="auth-input" rows="4" placeholder="" value={formData.description} onChange={(e) => setFormData({...formData, description: e.target.value})} required />
           </div>
 
           <div className="form-grid-2">
@@ -102,7 +102,7 @@ const EventForm = ({ eventToEdit, onSave}) => {
             </div>
             <div className="input-group">
               <label className="input-label">Location</label>
-              <input type="text" className="auth-input" placeholder="e.g., New York, NY" value={formData.location} onChange={(e) => setFormData({...formData, location: e.target.value})} required />
+              <input type="text" className="auth-input" placeholder="e.g Skopje" value={formData.location} onChange={(e) => setFormData({...formData, location: e.target.value})} required />
             </div>
           </div>
 
@@ -117,13 +117,13 @@ const EventForm = ({ eventToEdit, onSave}) => {
             </div>
             <div className="input-group">
               <label className="input-label">Venue</label>
-              <input type="text" className="auth-input" placeholder="e.g., The Grand Playhouse" value={formData.venue} onChange={(e) => setFormData({...formData, venue: e.target.value})} required />
+              <input type="text" className="auth-input" placeholder="e.g Boris Trajkovski" value={formData.venue} onChange={(e) => setFormData({...formData, venue: e.target.value})} required />
             </div>
           </div>
 
           <div className="input-group">
             <label className="input-label">Venue Capacity</label>
-            <input type="number" min="1" className="auth-input" placeholder="e.g., 500" value={formData.capacity} onChange={(e) => setFormData({...formData, capacity: e.target.value})} required />
+            <input type="number" min="1" className="auth-input" placeholder="" value={formData.capacity} onChange={(e) => setFormData({...formData, capacity: e.target.value})} required />
           </div>
 
           <div className="input-group" style={{ marginBottom: '10px' }}>
