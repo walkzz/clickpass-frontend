@@ -67,6 +67,53 @@ const ManageTicketsTab = () => {
     }
   };
 
+  const getStatusBadge = (status) => {
+    const styles = {
+      paid: {
+        backgroundColor: '#dcfce7',
+        color: '#166534',
+        border: '1px solid #bbf7d0',
+      },
+      failed: {
+        backgroundColor: '#fff1f2',
+        color: '#be123c',
+        border: '1px solid #fecdd3',
+      },
+      pending: {
+        backgroundColor: '#fef3c7',
+        color: '#b45309',
+        border: '1px solid #fde68a',
+      },
+    };
+
+    const base = {
+      padding: '4px 10px',
+      borderRadius: '99px',
+      fontSize: '11px',
+      fontWeight: '700',
+      textTransform: 'uppercase',
+      letterSpacing: '0.5px',
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: '4px',
+    };
+
+    const icons = {
+      paid: '✓',
+      failed: '✕',
+      pending: '…',
+    };
+
+    const resolved = styles[status] || styles.pending;
+
+    return (
+      <span style={{ ...base, ...resolved }}>
+        <span style={{ fontSize: '10px' }}>{icons[status] || '?'}</span>
+        {status}
+      </span>
+    );
+  };
+
   return (
     <div className="management-card">
       <h2 className="management-title">Manage Tickets & Orders</h2>
@@ -154,7 +201,7 @@ const ManageTicketsTab = () => {
             </div>
           </div>
 
-          {/* orders section*/}
+          {/* orders section */}
           <div style={{ marginTop: '40px', backgroundColor: '#ffffff', padding: '24px', borderRadius: '12px', border: '1px solid #e5e7eb', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}>
             <h3 style={{ marginTop: 0, marginBottom: '20px', fontSize: '20px', color: '#111827' }}>Recent Orders</h3>
             {orders.length === 0 ? (
@@ -172,6 +219,8 @@ const ManageTicketsTab = () => {
                 </thead>
                 <tbody>
                   {orders.map(order => {
+                    const isFailed = order.paymentStatus === 'failed';
+
                     const ticketCounts = {};
                     order.tickets.forEach(t => {
                         const name = t.ticketId?.ticketOfferingId?.name || 'Standard (Deleted)';
@@ -180,7 +229,10 @@ const ManageTicketsTab = () => {
                     const ticketSummary = Object.entries(ticketCounts).map(([name, count]) => `${count}x ${name}`).join(', ');
 
                     return (
-                      <tr key={order._id}>
+                      <tr
+                        key={order._id}
+                        style={isFailed ? { backgroundColor: '#fff8f8' } : {}}
+                      >
                         <td style={{ fontSize: '13px', color: '#6b7280', fontFamily: 'monospace' }}>
                           {order._id.substring(0,8).toUpperCase()}
                         </td>
@@ -188,20 +240,14 @@ const ManageTicketsTab = () => {
                           <div style={{ fontWeight: '600', color: '#111827' }}>{order.userId?.fullName || 'Guest'}</div>
                           <div style={{ fontSize: '12px', color: '#6b7280' }}>{order.userId?.email}</div>
                         </td>
-                        <td style={{ color: '#4b5563' }}>{ticketSummary}</td>
-                        <td style={{ fontWeight: 'bold', color: '#10b981' }}>€{order.totalAmount.toFixed(2)}</td>
+                        <td style={{ color: isFailed ? '#9ca3af' : '#4b5563', fontStyle: isFailed ? 'italic' : 'normal' }}>
+                          {isFailed ? '—' : ticketSummary}
+                        </td>
+                        <td style={{ fontWeight: 'bold', color: isFailed ? '#f43f5e' : '#10b981' }}>
+                          €{order.totalAmount.toFixed(2)}
+                        </td>
                         <td>
-                          <span style={{ 
-                            backgroundColor: order.paymentStatus === 'paid' ? '#dcfce7' : '#fef3c7', 
-                            color: order.paymentStatus === 'paid' ? '#166534' : '#b45309', 
-                            padding: '4px 8px', 
-                            borderRadius: '99px', 
-                            fontSize: '12px', 
-                            fontWeight: 'bold', 
-                            textTransform: 'uppercase' 
-                          }}>
-                            {order.paymentStatus}
-                          </span>
+                          {getStatusBadge(order.paymentStatus)}
                         </td>
                       </tr>
                     );
