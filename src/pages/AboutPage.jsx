@@ -10,6 +10,15 @@ export default function AboutPage() {
             <div className="main-container">
                 <div className="about-page">
                     <section className="section">
+                        <div className="mission-card">
+                            <h2>Our Mission</h2>
+                            <p>
+                                Our mission is to democratize the event management space by equipping organizers with powerful, intuitive administrative tools while simultaneously delivering a fast, transparent, and highly secure ticketing experience for our users. We strive to eliminate the common pain points of the industry—such as hidden fees, convoluted checkout processes, and administrative bottlenecks—ensuring that from the moment a ticket is listed to the final scan at the door, the ClickPass experience is completely frictionless.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section className="section">
                         <div className="info-card">
                             <h2>Our History</h2>
                             <p>
@@ -42,15 +51,6 @@ export default function AboutPage() {
                                 <h4>David Lee</h4>
                                 <p>Lead Developer</p>
                             </div>
-                        </div>
-                    </section>
-
-                    <section className="section">
-                        <div className="mission-card">
-                            <h2>Our Mission</h2>
-                            <p>
-                                Our mission is to democratize the event management space by equipping organizers with powerful, intuitive administrative tools while simultaneously delivering a fast, transparent, and highly secure ticketing experience for our users. We strive to eliminate the common pain points of the industry—such as hidden fees, convoluted checkout processes, and administrative bottlenecks—ensuring that from the moment a ticket is listed to the final scan at the door, the ClickPass experience is completely frictionless.
-                            </p>
                         </div>
                     </section>
 
@@ -92,7 +92,7 @@ export default function AboutPage() {
                                 rel="noreferrer"
                             >
                                 Twitter
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1227" width="20" height="20" fill="currentColor"><path d="M714.163 519.284L1160.89 0H1057.58L667.137 453.063L356.902 0H0L468.492 682.846L0 1226.37H103.314L515.518 747.412L843.098 1226.37H1200L714.137 519.284H714.163ZM566.593 682.846L527.997 628.478L183.084 146.561H330.28L608.48 537.41L647.076 591.778L1017.09 1106.67H869.897L566.593 682.871V682.846Z"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1227" width="20" height="20" fill="currentColor"><path d="M714.163 519.284L1160.89 0H1057.58L667.137 453.063L356.902 0H0L468.492 682.846L0 1226.37H103.314L515.518 747.412L843.098 1226.37H1200L714.137 519.284H714.163ZM566.593 682.846L527.997 628.478L183.084 146.561H330.28L608.48 537.41L647.076 591.778L1017.09 1106.67H869.897L566.593 682.871V682.846Z" /></svg>
                             </a>
 
                             <a
@@ -102,7 +102,7 @@ export default function AboutPage() {
                                 rel="noreferrer"
                             >
                                 Instagram
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><circle cx="12" cy="12" r="5" /><circle cx="17.5" cy="6.5" r="1.5" /></svg>
                             </a>
                         </div>
                     </section>
