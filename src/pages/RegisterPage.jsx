@@ -50,7 +50,7 @@ const RegisterPage = () => {
           
           <form onSubmit={handleRegister}>
             <div className="input-group">
-              <label className="input-label">Full Name</label>
+              <label className="input-label">Username</label>
               <input 
                 type="text" 
                 name="fullName"
