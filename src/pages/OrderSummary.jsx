@@ -41,15 +41,30 @@ const Checkout = () => {
       });
 
       const data = await res.json();
-      
-      if (res.ok) {
-        navigate('/purchase-status', { state: { order: data.order, tickets: data.tickets, event } });
-      } else {
-        alert(data.message || 'Payment failed');
+
+      if (data.failed) {
+        navigate('/purchase-status', {
+          state: { order: data.order, tickets: [], event, failed: true, message: data.message }
+        });
+        return;
       }
+
+      if (res.ok) {
+        navigate('/purchase-status', {
+          state: { order: data.order, tickets: data.tickets, event, failed: false }
+        });
+        return;
+      }
+      
+      navigate('/purchase-status', {
+        state: { order: null, tickets: [], event, failed: true, message: data.message || 'Payment failed. Please try again.' }
+      });
+
     // eslint-disable-next-line no-unused-vars
     } catch (error) {
-      alert('Network error. Please try again.');
+      navigate('/purchase-status', {
+        state: { order: null, tickets: [], event, failed: true, message: 'A network error occurred. Please try again.' }
+      });
     } finally {
       setIsProcessing(false);
     }
