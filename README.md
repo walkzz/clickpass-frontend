@@ -20,11 +20,14 @@ There are currently 3 types of roles:
 
 ## Here are screenshots of how the dashboard looks from the admin and organizers perspective:
 - Admin - can access anything on the admin panel from the left side
-
   <img width="1903" height="914" alt="Screenshot 2026-05-27 221241" src="https://github.com/user-attachments/assets/76dbd095-961f-44f4-b066-394caec6697f" />
 
 - Organizer - can only access events and manage tickets
   <img width="1901" height="913" alt="Screenshot 2026-05-27 221606" src="https://github.com/user-attachments/assets/f7c521bd-86b0-4d7a-9fd5-f24c455f4952" />
+
+- The full home page
+  <img width="1900" height="905" alt="Screenshot 2026-05-27 233833" src="https://github.com/user-attachments/assets/cc185b95-a567-49a2-8c51-fd1c97a54571" />
+
 
 # How to get started using the ClickPass web application
 
