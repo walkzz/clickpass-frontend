@@ -25,6 +25,9 @@ There are currently 3 types of roles:
 - Organizer - can only access events and manage tickets
   <img width="1901" height="913" alt="Screenshot 2026-05-27 221606" src="https://github.com/user-attachments/assets/f7c521bd-86b0-4d7a-9fd5-f24c455f4952" />
 
+- Blog page
+  <img width="1617" height="896" alt="Screenshot 2026-05-27 234128" src="https://github.com/user-attachments/assets/27d9b6ca-5350-4f9f-b627-e89a5367c712" />
+
 - The full home page
   <img width="1900" height="905" alt="Screenshot 2026-05-27 233833" src="https://github.com/user-attachments/assets/cc185b95-a567-49a2-8c51-fd1c97a54571" />
 
